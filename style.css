@@ -92,6 +92,11 @@ h2.nf-header {
     line-height: 1.6;
 }
 
+/* Text align */
+.text-center {
+    text-align: center;
+}
+
 .mb-1 {
     margin-bottom: .7rem;
 }
@@ -157,7 +162,7 @@ h2.nf-header {
 
 /* Section Border Div*/
 div.section-border {
-    padding: .5rem 0;
+    height: 0.5rem;
     background-color: rgb(35 35 35);
 }
 
@@ -272,16 +277,18 @@ body {
 }
 
 section.section {
-    /* background-color: wheat; */
-    margin-top: 100px;
-    max-width: calc(83.33333333333334% - 6rem);
     margin: 0 auto;
+    padding-block: 4.5rem;
+    max-width: calc(83.33333333333334% - 6rem);
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+}
 
-    padding-block: 4.5rem;
+.section-wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .section-box-heading p {
@@ -302,16 +309,16 @@ section.section {
     width: calc(83.33333333333334% - 6rem);
 }
 
-/* .nf-qa-list {
-    display: flex;
+.qa-section-wrapper {
+    width: 100%;
 }
 
-.nf-question-div {
-    display: flex;
-} */
 
 .nf-qa-list {
     background-color: rgb(45 45 45);
+    transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1) 0s;
+    text-align: left;
+    overflow: hidden;
 }
 
 .accordion-btn {
@@ -321,7 +328,7 @@ section.section {
     color: var(--color-primary);
     display: flex;
     justify-content: space-between;
-    /* padding: ; */
+    align-items: center;
     padding: 1.5rem;
 
 }
@@ -339,4 +346,16 @@ section.section {
 
 .nf-qa-answer[data-is-open="true"] {
     display: block;
+}
+
+/* email form Q&A section */
+.qa-form-container {
+    margin-block-start: 2.9125rem;
+}
+
+.qa-form-wrapper {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 65rem;
+    text-align: center;
 }
