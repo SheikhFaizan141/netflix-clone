@@ -8,6 +8,13 @@
 }
 
 
+:root {
+    --color-primary: #fff;
+    --bg-color-primary: #000;
+
+    --btn-bg-primary: rgb(229 9 20);
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -44,15 +51,12 @@ h2.nf-header {
     height: auto;
 }
 
-:root {
-    --color-primary: #fff;
-    --bg-color-primary: #000;
-}
+
 
 #nf-logo-svg {
     width: 9.25rem;
     height: 2.5rem;
-    fill: rgb(229,9,20);
+    fill: rgb(229, 9, 20);
     /* fill: currentColor; */
     display: block;
 }
@@ -108,7 +112,7 @@ h2.nf-header {
 }
 
 .mb-1 {
-    margin-bottom: .7rem;
+    margin-bottom: .75rem;
 }
 
 .btn {
@@ -129,7 +133,7 @@ h2.nf-header {
 }
 
 .btn.btn-primary {
-    background-color: rgb(229 9 20);
+    background-color: var(--btn-bg-primary);
 }
 
 
@@ -200,7 +204,7 @@ body {
     align-items: center;
 
     padding-block-end: 5rem;
-    filter:opacity(0.8);
+    filter: opacity(0.8);
     min-height: 43.75rem;
 
 
@@ -215,7 +219,7 @@ body {
     padding-block-end: 1.5rem;
     padding-inline-start: 4rem;
     padding-inline-end: 4rem;
-    
+
 }
 
 .nf-header-logo-div {
@@ -237,7 +241,7 @@ body {
 
 /* Netflix Hero */
 .nf-hero-container {
-    margin: 5rem auto;
+    margin: auto;
     text-align: center;
     /* border: 1px solid orange; */
     display: flex;
@@ -264,20 +268,30 @@ body {
 .form-control.form-control-email {
     width: 100%;
     flex: 2;
-
+    appearance: none;
+    background: transparent;
+    opacity: 90%;
     padding: 1.5rem 1rem 0.5rem;
+    /* outline: #fff; */
+    border-color: #fff;
+    color: var(--color-primary);
+    border-radius: 4px;
+    font-size: 1.15rem;
+
 }
 
 .form-control.form-control-email::placeholder {
     font-size: 1rem;
     font-weight: 600;
+    color: var(--color-primary);
 }
 
 .nf-hero-form>button.btn {
-    /* justify-content: center;
-     */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
     flex: 1;
-    text-align: center;
     text-align: center;
 }
 
@@ -292,10 +306,11 @@ body {
 }
 
 section.section {
-    margin: 0 auto;
-    padding-block: 4.5rem;
     max-width: calc(83.33333333333334% - 6rem);
-    
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding-block: 4.5rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -320,12 +335,25 @@ section.section {
 }
 
 /* Question answer section */
-.section-qa {
-    width: calc(83.33333333333334% - 6rem);
+section.section-qa {
+    /* border: 2px solid yellow; */
+    padding: 1rem;
+}
+
+@media(max-width: 1280px) {
+    section.section {
+        max-width: calc(100% - 5vw);
+    }
+
+    section.section-qa {
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
 }
 
 .qa-section-wrapper {
-    width: 100%;
+    /* width: 100%; */
+    flex: 1;
 }
 
 
@@ -334,7 +362,7 @@ section.section {
     transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1) 0s;
     text-align: left;
     overflow: hidden;
-    
+
 }
 
 .accordion-btn {
@@ -353,7 +381,7 @@ section.section {
 
 .accordion-btn:hover {
     transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-    background-color: rgb(65,65,65);
+    background-color: rgb(65, 65, 65);
 }
 
 .nf-qa-answer {
@@ -387,24 +415,26 @@ section.section {
 .nf-footer {
     padding-inline: 3rem;
     margin-block: 4.5rem;
+    width: calc(83.33% - 6rem);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
 }
+
 
 .nf-footer-wrapper {
     display: flex;
     justify-content: center;
 }
 
-.nf-contact > a {
+.nf-contact>a {
     color: var(--color-primary);
-    /* background-color: orange; */
 }
 
-.footer-links > ul {
+.footer-links>ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    /* grid-template-columns: repeat(auto-fill, 200px); */
-    gap: .5rem;
+    gap: .15rem;
     color: var(--color-primary);
 }
 
@@ -428,3 +458,14 @@ a[data-uia="footer-link"] {
     display: flex;
 }
 
+@media(max-width: 1065px) {
+    .footer-links>ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        gap: .15rem;
+        margin-block-end: 1rem;
+        color: var(--color-primary);
+    }
+
+}
